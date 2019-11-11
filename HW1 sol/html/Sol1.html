@@ -1,0 +1,205 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Sugguest Solution to Empirical Homework 1</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-11-10"><meta name="DC.source" content="Sol1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Sugguest Solution to Empirical Homework 1</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Question 1</a></li><li><a href="#2">(1)</a></li><li><a href="#3">(2)</a></li><li><a href="#4">(3)</a></li><li><a href="#5">(4)</a></li><li><a href="#6">(5)</a></li></ul></div><h2 id="1">Question 1</h2><h2 id="2">(1)</h2><p>The Sequence Problem is formulated as</p><p><img src="Sol1_eq08384565659222084594.png" alt="$$ \max_{ c_t ,a_{t+1} } \sum_{t=0}^ \infty \beta^t ln(c_t)   $$" style="width:77px;height:31px;"> subject to <img src="Sol1_eq09803252110914951324.png" alt="$$ c_t + a_{t+1} \leq y_t+ R a_t $$" style="width:95px;height:10px;">; <img src="Sol1_eq00966649133332800177.png" alt="$$ y_{t+1} = (1- \rho) e + \rho y_t +u_t $$" style="width:122px;height:11px;">; <img src="Sol1_eq01664211363068620669.png" alt="$$ c_t \geq 0 $$" style="width:28px;height:10px;">.</p><p>The Recursive formulation is</p><p><img src="Sol1_eq07101211386223817678.png" alt="$$ V(a,y) = \max_{a' \in [ -\infty, y + Ra]} ln( y + Ra- a') + \beta&#xA;E \big( V(a', y')|y \big)$$" style="width:261px;height:19px;"></p><p>Control Variables are <img src="Sol1_eq09088201471295806675.png" alt="$c_t$" style="width:8px;height:7px;"> and <img src="Sol1_eq12831697699056077838.png" alt="$a_{t+1}$" style="width:18px;height:8px;">. State Variables are <img src="Sol1_eq14653233574194613197.png" alt="$a_{t}$" style="width:9px;height:7px;"> and <img src="Sol1_eq04182740412221953711.png" alt="$y_{t}$" style="width:8px;height:8px;">.</p><h2 id="3">(2)</h2><p>First convert an AR(1) process into a Markov Process with 15 state points. And then solve the dynamic problem with value function iteration. Here I only consider the case <img src="Sol1_eq13820397314996363550.png" alt="$$ a' \geq 0 $$" style="width:28px;height:11px;">.</p><pre class="codeinput">clear <span class="string">all</span>
+beta=0.9;
+VFI1;
+save(<span class="string">'Value90'</span>,<span class="string">'grid_a'</span>,<span class="string">'grid_y'</span>,<span class="string">'prob'</span>,<span class="string">'V'</span>,<span class="string">'pol'</span>,<span class="string">'polI'</span>);
+clear
+beta=0.85;
+VFI1;
+V85= V;
+save(<span class="string">'Value85'</span>,<span class="string">'V85'</span>);
+clear
+beta=0.95;
+VFI1;
+V95=V;
+save(<span class="string">'Value95'</span>,<span class="string">'V95'</span>);
+clear
+load(<span class="string">'Value90'</span>,<span class="string">'grid_a'</span>,<span class="string">'V'</span>);
+load(<span class="string">'Value85'</span>,<span class="string">'V85'</span>);
+load(<span class="string">'Value95'</span>,<span class="string">'V95'</span>);
+plot(grid_a, V(:,8)',<span class="string">'g'</span>, grid_a, V85(:,8)',<span class="string">'r'</span>, grid_a, V95(:,8)',<span class="string">'b'</span>);
+</pre><pre class="codeoutput">Number of iteratios: 179, Convergence Achieved. 
+Number of iteratios: 117, Convergence Achieved. 
+Number of iteratios: 370, Convergence Achieved. 
+</pre><img vspace="5" hspace="5" src="Sol1_01.png" alt=""> <h2 id="4">(3)</h2><pre class="codeinput">load(<span class="string">'Value90'</span>,<span class="string">'grid_a'</span>,<span class="string">'grid_y'</span>,<span class="string">'prob'</span>,<span class="string">'V'</span>,<span class="string">'pol'</span>,<span class="string">'polI'</span>);
+sz_a= size(grid_a, 2);
+sz_y= size(grid_y, 2);
+grida=repmat(grid_a',1,sz_y);
+gridy=repmat(grid_y,sz_a,1);
+mesh(grida,gridy,V)
+</pre><img vspace="5" hspace="5" src="Sol1_02.png" alt=""> <h2 id="5">(4)</h2><pre class="codeinput">mesh(grida,gridy,pol)
+</pre><img vspace="5" hspace="5" src="Sol1_03.png" alt=""> <h2 id="6">(5)</h2><pre class="codeinput">B=5000;
+a=zeros(B,20);
+<span class="keyword">for</span> b=1:B
+    aind=zeros(1,21);
+    aind(1) = int64( find(grid_a'~=10, 1, <span class="string">'first'</span>) );
+    yind=zeros(1,21);
+    yind(1)= int64( find(grid_y' ~=6, 1, <span class="string">'first'</span>) );
+    <span class="keyword">for</span> t=1:20
+    yind(t+1)=Gen_yind(prob,yind(t));
+    aind(t+1)= polI( aind(t), yind(t));
+    <span class="keyword">end</span>
+    a(b,:) = grid_a( aind(1,2:21) );
+<span class="keyword">end</span>
+Mean_a = mean(a,1);
+x=1:20;
+plot(x, Mean_a, <span class="string">'b'</span>)
+</pre><img vspace="5" hspace="5" src="Sol1_04.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Sugguest Solution to Empirical Homework 1 
+%%  Question 1 
+%% (1)
+% The Sequence Problem is formulated as 
+%
+% $$ \max_{ c_t ,a_{t+1} } \sum_{t=0}^ \infty \beta^t ln(c_t)   $$  
+% subject to 
+% $$ c_t + a_{t+1} \leq y_t+ R a_t $$; $$
+% y_{t+1} = (1- \rho) e + \rho y_t +u_t $$; $$ c_t \geq 0 $$. 
+% 
+% The Recursive formulation is 
+%
+% $$ V(a,y) = \max_{a' \in [ -\infty, y + Ra]} ln( y + Ra- a') + \beta
+% E \big( V(a', y')|y \big)$$ 
+%
+% Control Variables are $c_t$ and $a_{t+1}$. State Variables are $a_{t}$
+% and $y_{t}$. 
+%
+%% (2)
+% First convert an AR(1) process into a Markov Process with 15 state
+% points. And then solve the dynamic problem with value function iteration.
+% Here I only consider the case $$ a' \geq 0 $$. 
+clear all
+beta=0.9;
+VFI1;
+save('Value90','grid_a','grid_y','prob','V','pol','polI');
+clear
+beta=0.85;
+VFI1;
+V85= V;
+save('Value85','V85');
+clear
+beta=0.95;
+VFI1;
+V95=V;
+save('Value95','V95');
+clear
+load('Value90','grid_a','V');
+load('Value85','V85');
+load('Value95','V95');
+plot(grid_a, V(:,8)','g', grid_a, V85(:,8)','r', grid_a, V95(:,8)','b');
+
+%% (3) 
+load('Value90','grid_a','grid_y','prob','V','pol','polI');
+sz_a= size(grid_a, 2);
+sz_y= size(grid_y, 2);
+grida=repmat(grid_a',1,sz_y);
+gridy=repmat(grid_y,sz_a,1);
+mesh(grida,gridy,V)
+
+
+%% (4) 
+mesh(grida,gridy,pol)
+
+%% (5) 
+B=5000;
+a=zeros(B,20);
+for b=1:B 
+    aind=zeros(1,21);
+    aind(1) = int64( find(grid_a'~=10, 1, 'first') );
+    yind=zeros(1,21);
+    yind(1)= int64( find(grid_y' ~=6, 1, 'first') );
+    for t=1:20
+    yind(t+1)=Gen_yind(prob,yind(t));
+    aind(t+1)= polI( aind(t), yind(t));
+    end
+    a(b,:) = grid_a( aind(1,2:21) );
+end
+Mean_a = mean(a,1);
+x=1:20;
+plot(x, Mean_a, 'b')
+
+
+
+
+
+              
+            
+            
+            
+
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,206 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Question 3</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-11-10"><meta name="DC.source" content="Q3.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Question 3</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">(1)</a></li><li><a href="#2">(2)</a></li></ul></div><h2 id="1">(1)</h2><p>The problem is</p><p><img src="Q3_eq10135101146244701661.png" alt="$$ \max_{C_t, K_t, N_t} \beta^t log C_t $$" style="width:67px;height:19px;"> subject to <img src="Q3_eq00813734266845918455.png" alt="$$ C_t +K_{t+1} = A_t ^{1-\alpha} K_t^\alpha N_t^{1-\alpha} $$" style="width:126px;height:13px;">; <img src="Q3_eq03687511097416971696.png" alt="$$ A_t = (1+g)^t A_0 $$" style="width:75px;height:13px;">; <img src="Q3_eq03136683297723771212.png" alt="$$ C_t \geq 0 $$" style="width:31px;height:10px;">; <img src="Q3_eq11059734315072481903.png" alt="$$ K_{t+1} \geq 0 $$" style="width:42px;height:10px;">; <img src="Q3_eq16855386692058790953.png" alt="$$ N_t \in [0, \bar{N} ] $$" style="width:51px;height:13px;">.</p><p>Euler equation is</p><p><img src="Q3_eq13896753272450079898.png" alt="$$ \frac{1}{C_t} = \frac{\beta \big( \alpha A_t ^{1-\alpha} K_t^{\alpha-1} \bar{N} ^{1-\alpha} +1 -\delta ) } { C_{t+1} } $$" style="width:164px;height:28px;">.</p><p>Resource Constraint is</p><p><img src="Q3_eq04889547973345673613.png" alt="$$ C_t +K_{t+1} = A_t ^{1-\alpha} K_t^\alpha \bar{N}^{1-\alpha} $$" style="width:126px;height:13px;">.</p><p>Define that <img src="Q3_eq16832176590850894788.png" alt="$$ k_t = K_t (1+g)^{-t} $$" style="width:78px;height:13px;"> and <img src="Q3_eq08416804029283684779.png" alt="$$ c_t = C_t (1+g)^{-t} $$" style="width:76px;height:13px;"> for all t. Then</p><p><img src="Q3_eq04577755267995741043.png" alt="$$ \frac{ (1+g) c_{t+1} } { c_t} = \beta \big( \alpha A_0^{1-\alpha}&#xA;k_{t+1}^{\alpha -1} \bar{N}^{1-\alpha } + 1 - \delta \big) $$" style="width:198px;height:25px;"></p><p><img src="Q3_eq01027477615416642452.png" alt="$$ (1+g) k_{t+1} =  A_0^{1-\alpha} k_{t}^{\alpha} \bar{N}^{1-\alpha } + (1-\delta) k_t -c_t $$" style="width:203px;height:13px;">.</p><p>Assuming <img src="Q3_eq14884798413298148911.png" alt="$$ 1+g &gt; \beta (1-\delta ) $$" style="width:78px;height:11px;">, these equations give a unique balanced path, in which <img src="Q3_eq13166167684979995095.png" alt="$$ k_{t+1} = k_t = k^* &gt;0 $$" style="width:88px;height:11px;"> and <img src="Q3_eq08030321873254148311.png" alt="$$ c_{t+1} = c_t = c^* &gt;0 $$" style="width:84px;height:11px;">, with</p><p><img src="Q3_eq04566696014028147902.png" alt="$$ k^* = \Big( \frac{ \alpha \beta } { 1+g -\beta (1-\delta)}&#xA;\Big)^\frac{1}{1-\alpha} A_0 \bar{N} $$" style="width:155px;height:27px;"></p><p><img src="Q3_eq15553578466399624431.png" alt="$$ c^* = \Bigg( \big( \frac{ \alpha \beta } { 1+g -\beta (1-\delta)} \big)^\frac{\alpha}{1-\alpha} - (\delta +g) \big( \frac{ \alpha \beta } { 1+g -\beta (1-\delta)} \big)^\frac{1}{1-\alpha} \Bigg) A_0 \bar{N} $$" style="width:318px;height:34px;">.</p><h2 id="2">(2)</h2><p>The phase diagram is like following:</p><p><img vspace="5" hspace="5" src="phase.PNG" alt=""> </p><p>The saddle path has the form:</p><p><img vspace="5" hspace="5" src="saddle.PNG" alt=""> </p><pre class="codeinput">clear
+g=0.2;
+alpha= 0.3;
+beta =0.9;
+delta = 0.5;
+k0=1;
+barN=1;
+A0= 1;
+ke = ( alpha*beta/ ( 1+g -beta*(1-delta)))^(1/(1-alpha)) * A0 * barN;
+ce = ( ( alpha*beta/ ( 1+g -beta*(1-delta)))^(alpha/(1-alpha)) - <span class="keyword">...</span>
+(delta +g)*( alpha*beta/ ( 1+g -beta*(1-delta)))^(1/(1-alpha)) )* A0 * barN;
+c0=0.48:0.0001:5;
+B=size(c0,2);
+Accept=zeros(B,1);
+T=6;
+k=zeros(T,1);
+c=zeros(T,1);
+k(1)=k0;
+<span class="keyword">for</span> b=1:B
+    c(1)=c0(b);
+    <span class="keyword">for</span> t=1:T
+        k(t+1)= (A0^(1-alpha)*k(t)^alpha*barN^(1-alpha) +(1-delta)*k(t)-c(t))/(1+g);
+        c(t+1)= beta*( alpha* A0^(1-alpha)*k(t)^(alpha-1)*barN^(1-alpha)+1-delta)*c(t)/(1+g);
+        <span class="keyword">if</span> k(t+1)&lt;ke &amp;&amp; c(t+1)&gt;ce
+            <span class="keyword">break</span>;
+        <span class="keyword">else</span> <span class="keyword">if</span> k(t+1)&gt;ke &amp;&amp; c(t+1) &lt;ce
+                <span class="keyword">break</span>;
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> t==T
+        Accept(b)=1;
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+lower= find(Accept,1,<span class="string">'first'</span>);
+upper= find(Accept,1,<span class="string">'last'</span>);
+C0 = (c0(lower)+c0(upper))/2;
+fprintf(<span class="string">'The approximate consumption on saddle path is %1.4f'</span>, C0);
+</pre><pre class="codeoutput">The approximate consumption on saddle path is 1.0440</pre><p>Comment: You need to set T to be small. A large T will eliminate every possible C0.</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Question 3 
+%% (1) 
+% The problem is 
+%
+% $$ \max_{C_t, K_t, N_t} \beta^t log C_t $$ subject to 
+% $$ C_t +K_{t+1} = A_t ^{1-\alpha} K_t^\alpha N_t^{1-\alpha} $$; 
+% $$ A_t = (1+g)^t A_0 $$; 
+% $$ C_t \geq 0 $$; $$ K_{t+1} \geq 0 $$; $$ N_t \in [0, \bar{N} ] $$. 
+% 
+% Euler equation is 
+%
+% $$ \frac{1}{C_t} = \frac{\beta \big( \alpha A_t ^{1-\alpha} K_t^{\alpha-1} \bar{N} ^{1-\alpha} +1 -\delta ) } { C_{t+1} } $$.
+% 
+% Resource Constraint is 
+%
+% $$ C_t +K_{t+1} = A_t ^{1-\alpha} K_t^\alpha \bar{N}^{1-\alpha} $$. 
+% 
+% Define that $$ k_t = K_t (1+g)^{-t} $$ and $$ c_t = C_t (1+g)^{-t} $$ for
+% all t. Then 
+%
+% $$ \frac{ (1+g) c_{t+1} } { c_t} = \beta \big( \alpha A_0^{1-\alpha}
+% k_{t+1}^{\alpha -1} \bar{N}^{1-\alpha } + 1 - \delta \big) $$ 
+%
+% $$ (1+g) k_{t+1} =  A_0^{1-\alpha} k_{t}^{\alpha} \bar{N}^{1-\alpha } +
+% (1-\delta) k_t -c_t $$. 
+%
+% Assuming $$ 1+g > \beta (1-\delta ) $$, these equations give a unique
+% balanced path, in which $$ k_{t+1} = k_t = k^* >0 $$ and $$ c_{t+1} = c_t
+% = c^* >0 $$, with 
+%
+% $$ k^* = \Big( \frac{ \alpha \beta } { 1+g -\beta (1-\delta)}
+% \Big)^\frac{1}{1-\alpha} A_0 \bar{N} $$ 
+%
+% $$ c^* = \Bigg( \big( \frac{ \alpha \beta } { 1+g -\beta (1-\delta)}
+% \big)^\frac{\alpha}{1-\alpha} - (\delta +g) \big( \frac{ \alpha \beta } { 1+g -\beta (1-\delta)}
+% \big)^\frac{1}{1-\alpha} \Bigg) A_0 \bar{N} $$.
+%
+%% (2) 
+% The phase diagram is like following: 
+% 
+% <<phase.PNG>>
+% 
+% The saddle path has the form: 
+%
+% <<saddle.PNG>>
+%
+clear
+g=0.2;
+alpha= 0.3;
+beta =0.9; 
+delta = 0.5;
+k0=1;
+barN=1;
+A0= 1;
+ke = ( alpha*beta/ ( 1+g -beta*(1-delta)))^(1/(1-alpha)) * A0 * barN;
+ce = ( ( alpha*beta/ ( 1+g -beta*(1-delta)))^(alpha/(1-alpha)) - ... 
+(delta +g)*( alpha*beta/ ( 1+g -beta*(1-delta)))^(1/(1-alpha)) )* A0 * barN;
+c0=0.48:0.0001:5;
+B=size(c0,2);
+Accept=zeros(B,1);
+T=6;
+k=zeros(T,1);
+c=zeros(T,1);
+k(1)=k0;
+for b=1:B
+    c(1)=c0(b);
+    for t=1:T
+        k(t+1)= (A0^(1-alpha)*k(t)^alpha*barN^(1-alpha) +(1-delta)*k(t)-c(t))/(1+g);
+        c(t+1)= beta*( alpha* A0^(1-alpha)*k(t)^(alpha-1)*barN^(1-alpha)+1-delta)*c(t)/(1+g);
+        if k(t+1)<ke && c(t+1)>ce 
+            break;
+        else if k(t+1)>ke && c(t+1) <ce
+                break;
+            end
+        end
+    end
+    if t==T
+        Accept(b)=1;
+    end
+end
+lower= find(Accept,1,'first');
+upper= find(Accept,1,'last');
+C0 = (c0(lower)+c0(upper))/2;
+fprintf('The approximate consumption on saddle path is %1.4f', C0);
+
+%% 
+% Comment: You need to set T to be small. A large T will eliminate every
+% possible C0. 
+
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>

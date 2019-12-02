@@ -66,7 +66,7 @@ for b=1:B
     c(1)=c0(b);
     for t=1:T
         k(t+1)= (A0^(1-alpha)*k(t)^alpha*barN^(1-alpha) +(1-delta)*k(t)-c(t))/(1+g);
-        c(t+1)= beta*( alpha* A0^(1-alpha)*k(t)^(alpha-1)*barN^(1-alpha)+1-delta)*c(t)/(1+g);
+        c(t+1)= beta*( alpha* A0^(1-alpha)*k(t+1)^(alpha-1)*barN^(1-alpha)+1-delta)*c(t)/(1+g);
         if k(t+1)<ke && c(t+1)>ce 
             break;
         else if k(t+1)>ke && c(t+1) <ce

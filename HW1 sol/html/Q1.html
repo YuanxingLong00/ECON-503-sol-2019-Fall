@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Sugguest Solution to Empirical Homework 1</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-11-10"><meta name="DC.source" content="Sol1.m"><style type="text/css">
+      --><title>Sugguest Solution to Empirical Homework 1</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-12-02"><meta name="DC.source" content="Q1.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Sugguest Solution to Empirical Homework 1</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Question 1</a></li><li><a href="#2">(1)</a></li><li><a href="#3">(2)</a></li><li><a href="#4">(3)</a></li><li><a href="#5">(4)</a></li><li><a href="#6">(5)</a></li></ul></div><h2 id="1">Question 1</h2><h2 id="2">(1)</h2><p>The Sequence Problem is formulated as</p><p><img src="Sol1_eq08384565659222084594.png" alt="$$ \max_{ c_t ,a_{t+1} } \sum_{t=0}^ \infty \beta^t ln(c_t)   $$" style="width:77px;height:31px;"> subject to <img src="Sol1_eq09803252110914951324.png" alt="$$ c_t + a_{t+1} \leq y_t+ R a_t $$" style="width:95px;height:10px;">; <img src="Sol1_eq00966649133332800177.png" alt="$$ y_{t+1} = (1- \rho) e + \rho y_t +u_t $$" style="width:122px;height:11px;">; <img src="Sol1_eq01664211363068620669.png" alt="$$ c_t \geq 0 $$" style="width:28px;height:10px;">.</p><p>The Recursive formulation is</p><p><img src="Sol1_eq07101211386223817678.png" alt="$$ V(a,y) = \max_{a' \in [ -\infty, y + Ra]} ln( y + Ra- a') + \beta&#xA;E \big( V(a', y')|y \big)$$" style="width:261px;height:19px;"></p><p>Control Variables are <img src="Sol1_eq09088201471295806675.png" alt="$c_t$" style="width:8px;height:7px;"> and <img src="Sol1_eq12831697699056077838.png" alt="$a_{t+1}$" style="width:18px;height:8px;">. State Variables are <img src="Sol1_eq14653233574194613197.png" alt="$a_{t}$" style="width:9px;height:7px;"> and <img src="Sol1_eq04182740412221953711.png" alt="$y_{t}$" style="width:8px;height:8px;">.</p><h2 id="3">(2)</h2><p>First convert an AR(1) process into a Markov Process with 15 state points. And then solve the dynamic problem with value function iteration. Here I only consider the case <img src="Sol1_eq13820397314996363550.png" alt="$$ a' \geq 0 $$" style="width:28px;height:11px;">.</p><pre class="codeinput">clear <span class="string">all</span>
+  </style></head><body><div class="content"><h1>Sugguest Solution to Empirical Homework 1</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Question 1</a></li><li><a href="#2">(1)</a></li><li><a href="#3">(2)</a></li><li><a href="#4">(3)</a></li><li><a href="#5">(4)</a></li><li><a href="#6">(5)</a></li></ul></div><h2 id="1">Question 1</h2><h2 id="2">(1)</h2><p>The Sequence Problem is formulated as</p><p><img src="Q1_eq08384565659222084594.png" alt="$$ \max_{ c_t ,a_{t+1} } \sum_{t=0}^ \infty \beta^t ln(c_t)   $$" style="width:77px;height:31px;"> subject to <img src="Q1_eq09803252110914951324.png" alt="$$ c_t + a_{t+1} \leq y_t+ R a_t $$" style="width:95px;height:10px;">; <img src="Q1_eq00966649133332800177.png" alt="$$ y_{t+1} = (1- \rho) e + \rho y_t +u_t $$" style="width:122px;height:11px;">; <img src="Q1_eq01664211363068620669.png" alt="$$ c_t \geq 0 $$" style="width:28px;height:10px;">.</p><p>The Recursive formulation is</p><p><img src="Q1_eq07101211386223817678.png" alt="$$ V(a,y) = \max_{a' \in [ -\infty, y + Ra]} ln( y + Ra- a') + \beta&#xA;E \big( V(a', y')|y \big)$$" style="width:261px;height:19px;"></p><p>Control Variables are <img src="Q1_eq09088201471295806675.png" alt="$c_t$" style="width:8px;height:7px;"> and <img src="Q1_eq12831697699056077838.png" alt="$a_{t+1}$" style="width:18px;height:8px;">. State Variables are <img src="Q1_eq14653233574194613197.png" alt="$a_{t}$" style="width:9px;height:7px;"> and <img src="Q1_eq04182740412221953711.png" alt="$y_{t}$" style="width:8px;height:8px;">.</p><h2 id="3">(2)</h2><p>First convert an AR(1) process into a Markov Process with 15 state points. And then solve the dynamic problem with value function iteration. Here I only consider the case <img src="Q1_eq13820397314996363550.png" alt="$$ a' \geq 0 $$" style="width:28px;height:11px;">.</p><pre class="codeinput">clear <span class="string">all</span>
 beta=0.9;
 VFI1;
 save(<span class="string">'Value90'</span>,<span class="string">'grid_a'</span>,<span class="string">'grid_y'</span>,<span class="string">'prob'</span>,<span class="string">'V'</span>,<span class="string">'pol'</span>,<span class="string">'polI'</span>);
@@ -88,14 +88,14 @@ plot(grid_a, V(:,8)',<span class="string">'g'</span>, grid_a, V85(:,8)',<span cl
 </pre><pre class="codeoutput">Number of iteratios: 179, Convergence Achieved. 
 Number of iteratios: 117, Convergence Achieved. 
 Number of iteratios: 370, Convergence Achieved. 
-</pre><img vspace="5" hspace="5" src="Sol1_01.png" alt=""> <h2 id="4">(3)</h2><pre class="codeinput">load(<span class="string">'Value90'</span>,<span class="string">'grid_a'</span>,<span class="string">'grid_y'</span>,<span class="string">'prob'</span>,<span class="string">'V'</span>,<span class="string">'pol'</span>,<span class="string">'polI'</span>);
+</pre><img vspace="5" hspace="5" src="Q1_01.png" alt=""> <h2 id="4">(3)</h2><pre class="codeinput">load(<span class="string">'Value90'</span>,<span class="string">'grid_a'</span>,<span class="string">'grid_y'</span>,<span class="string">'prob'</span>,<span class="string">'V'</span>,<span class="string">'pol'</span>,<span class="string">'polI'</span>);
 sz_a= size(grid_a, 2);
 sz_y= size(grid_y, 2);
 grida=repmat(grid_a',1,sz_y);
 gridy=repmat(grid_y,sz_a,1);
 mesh(grida,gridy,V)
-</pre><img vspace="5" hspace="5" src="Sol1_02.png" alt=""> <h2 id="5">(4)</h2><pre class="codeinput">mesh(grida,gridy,pol)
-</pre><img vspace="5" hspace="5" src="Sol1_03.png" alt=""> <h2 id="6">(5)</h2><pre class="codeinput">B=5000;
+</pre><img vspace="5" hspace="5" src="Q1_02.png" alt=""> <h2 id="5">(4)</h2><pre class="codeinput">mesh(grida,gridy,pol)
+</pre><img vspace="5" hspace="5" src="Q1_03.png" alt=""> <h2 id="6">(5)</h2><pre class="codeinput">B=5000;
 a=zeros(B,20);
 <span class="keyword">for</span> b=1:B
     aind=zeros(1,21);
@@ -111,7 +111,7 @@ a=zeros(B,20);
 Mean_a = mean(a,1);
 x=1:20;
 plot(x, Mean_a, <span class="string">'b'</span>)
-</pre><img vspace="5" hspace="5" src="Sol1_04.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="Q1_04.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% Sugguest Solution to Empirical Homework 1 
 %%  Question 1 

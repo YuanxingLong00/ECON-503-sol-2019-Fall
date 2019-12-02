@@ -57,9 +57,9 @@ B=5000;
 a=zeros(B,20);
 for b=1:B 
     aind=zeros(1,21);
-    aind(1) = int64( find(grid_a'~=10, 1, 'first') );
+    aind(1) = int64( find(grid_a >=10, 1, 'first') );
     yind=zeros(1,21);
-    yind(1)= int64( find(grid_y' ~=6, 1, 'first') );
+    yind(1)= int64( find(grid_y >=6, 1, 'first') );
     for t=1:20
     yind(t+1)=Gen_yind(prob,yind(t));
     aind(t+1)= polI( aind(t), yind(t));
